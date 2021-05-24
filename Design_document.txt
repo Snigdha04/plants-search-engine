@@ -1,0 +1,59 @@
+CS F469 INFORMATION RETRIEVAL
+(First semester 2017-2018)
+
+Design Document
+
+Assignment 1: Domain Specific Information Retrieval System
+
+The team members are:-
+1. Aditya Desai - 2015A3PS0211H
+2. Meghna Vasudeva - 2015B3A70664H
+3. Snigdha Grandhi - 2015A8PS0495H
+4. Aayush Barathwal - 2015A7PS0136H
+
+Aim:
+To implement an information retrieval system based on vector space model on the given dataset of the website https://www.southernliving.com/plants.
+
+Scope:
+This document describes the implementation details of the retrieval system and its functionality. The implementation is based on vector space model for document search.
+
+Abbreviations:
+1. tf – term frequency
+2. idf – inverse document frequency
+
+Design Overview:
+1. Problem Description:
+To list out the most relevant documents from the corpus based on the inputs from the user. The query processor takes a string query or an audio query as an input.
+
+2. Technologies used:
+Programming language: Python 3.5.2
+Data stored in .txt files in JSON format
+Google Cloud Platform's speech-to-text API
+Python Flask 1.02 Web Server
+
+3. System description:
+UI description:
+The user may type in a free-text query into the search bar given or he may use the voice recognition module and speak his query. Upon hitting search, the 10 most relevant plants are presented to the user, along with the hyperlink to the original website and a snippet of the contents of the page. If there are lesser than 10 relevant documents, fewer documents are shown.
+ 
+4. Data Storage Model:
+The inverted index is built in the form of a dictionary where the key is a unique term and the value is a posting list implemented as another dictionary. This posting list dictionary again has the document number as the key and the frequency of the term as the value.
+
+5. Application Operation:
+Text query:
+When a text query is given as input, it is normalized and tokenized. Porter Stemmer Algorithm is used for stemming. Based on tf-idf frequency, top relevant documents are fetched after which the user can visit the links outputted in search of information.
+Audio query: 
+For giving audio query as input, the mic button needs to be clicked first. The user will then have to speak the query aloud and the API will convert that audio into text. After hitting the search button, the retrieval process is same as of text queries.
+
+6. Dependencies:
+nltk: Python package for tokenizing words.
+math: Python module used for calculations and mathematical operations.
+pyDoc: Used for generation of documentation.
+flask: Web server used
+
+
+References:
+Corpus: https://www.southernliving.com/plants 
+Tokenization: https://www.youtube.com/watch?v=FLZvOKSCkxY
+pydoc: https://www.youtube.com/watch?v=Y6TgbyfKCNM
+flask: http://flask.pocoo.org/
+
