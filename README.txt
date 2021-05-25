@@ -1,5 +1,5 @@
-#### RECOMMENDER SYSTEMS
-##### Assignment 2
+#### INFORMATION RETRIEVAL SYSTEMS
+##### Assignment 1
 ##### Course: CS F469 Information Retrieval (Semester 1 2017-2018) 
 
 ###### Contributors:-
@@ -8,13 +8,19 @@
 3. Snigdha Grandhi - 2015A8PS0495H
 4. Aayush Barthwal - 2015A7PS0136H
 
-Aim: To implement and compare various techniques for building a recommender system on the given dataset.
+This plant engine uses a flask based web interface to host a website which acts as a search engine for searching plants.
 
-Language: Python 3.5.2
+The underlying algorithm uses inverted index with term frequency - inverse document frequency.
 
-Working and Setup:-
-1. Open the terminal in assignment folder
-2. Run 'python3 recommender_systems.py' on terminal without the quotes
+To execute this run
+
+FLASK_APP=webapp.py flask run
+
+To run the script as a development server which is suitable for debugging
+
+FLASK_APP=webapp.py FLASK_ENV=development flask run
+
+After executing the above lines go to http://127.0.0.1:5000 and enjoy!
 
  
 
